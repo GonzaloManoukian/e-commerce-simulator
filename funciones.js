@@ -1,11 +1,17 @@
-var nombre = prompt("Ingrese su nombre")
-var apellido = prompt("Ingrese su apellido")
-var usuario = nombre + " " + apellido
-console.log("Usuario: " + usuario)
+let usuario = prompt("Ingrese su nombre y apellido");
+let verificacion = prompt("Vuelva a ingresar su nombre y apellido para verificar que no es un robot");
 
-var numero = prompt("Ingrese un numero para sumarlo a 10")
-    numero = Number(numero)
-var resultado = 10+numero
-console.log("Numero: " + resultado)
+if(usuario == verificacion) {
+    console.log("Usuario: " + usuario);
+    alert("Bienvenido " + usuario);
 
-alert("Bienvenido "+ usuario + ", su numero es: "+ resultado)
+    let numero = parseInt(prompt("Ingrese un Numero"))
+    
+    if(numero >= 10 && numero <= 50) {
+        alert("Su numero se encuentra entre 10 y 50")
+    } else {
+        alert("Su numero es menor a 10 o mayor a 50")
+    }
+} else {
+    alert("Usuario Incorrecto, Intente Nuevamente.")
+}
