@@ -1,3 +1,5 @@
+/* ===== Simulador de Cuotas ===== */
+
 // let producto = 2000;
 // let cuotas = parseInt(prompt(`El saldo de su compra es de $${producto}, desea realizar la compra en 1, 3 o 6 cuotas? Por favor ingrese el numero de cuotas:`));
 
@@ -23,20 +25,25 @@
 //         break;
 // }
 
-function usuario(user, pass) {
-    this.user = user;
-    this.pass = pass;
-}
 
-let user = prompt(`Ingreses su nombre de usuario`);
-let pass = prompt(`Ingrese su Contraseña`);
+/* ===== Simulador de Ingreso Sesion ===== */
 
-let usuarioActual = new usuario(user, pass);
-console.log(usuarioActual);
+// function usuario(user, pass) {
+//     this.user = user;
+//     this.pass = pass;
+// }
 
-alert(`Bienvendio ${usuarioActual.user}. Que bueno tenerte de vuelta!`);
-console.log(`Usuario Activo: ${usuarioActual.user}`);
+// let user = prompt(`Ingreses su nombre de usuario`);
+// let pass = prompt(`Ingrese su Contraseña`);
 
+// let usuarioActual = new usuario(user, pass);
+// console.log(usuarioActual);
+
+// alert(`Bienvendio ${usuarioActual.user}. Que bueno tenerte de vuelta!`);
+// console.log(`Usuario Activo: ${usuarioActual.user}`);
+
+
+/* ===== Funcion Constructora de Productos ===== */
 
 function libro(titulo, autor, editorial, precio) {
     this.titulo = titulo;
@@ -45,9 +52,42 @@ function libro(titulo, autor, editorial, precio) {
     this.precio = precio;
 }
 
-let libro1 = new libro("Cartero", "Charles Bukowski", "Anagrama", 700);
-let libro2 = new libro("Viajes por el Scriptorum", "Pual Auster", "Anagrama", 700);
+const libro1 = new libro("Cartero", "Charles Bukowski", "Anagrama", 700);
+const libro2 = new libro("Viajes por el Scriptorum", "Pual Auster", "Anagrama", 700);
+const libro3 = new libro("Seda", "Alessandro Baricco", "Anagrama", 700);
 
 
+/* ===== Carrito ===== */
+
+let carrito = [];
 
 
+/* ===== Simulador Agregar ===== */
+
+let agrega = prompt(`Desea agregar un producto? (si/no)`);
+
+while (agrega.toLowerCase() === "si") {
+    
+    const seleccion = prompt(`Que Libro desea comprar? Elija 1, 2 o 3.`);
+    switch(seleccion) {
+        case "1":
+            carrito.push(libro1);
+            agrega = prompt(`Desea agregar otro producto? (si/no)`);
+            break;
+        case "2":
+            carrito.push(libro2);
+            agrega = prompt(`Desea agregar otro producto? (si/no)`);
+            break;
+        case "3":
+            carrito.push(libro2);
+            agrega = prompt(`Desea agregar otro producto? (si/no)`);
+            break;
+        default:
+            alert(`Valor ingresado Incorrecto. Por favor, intentelo nuevamente`);
+            break;
+}
+
+}
+console.log(carrito)
+
+alert(`El total de productos ingrsados es de ${carrito.length}`);
