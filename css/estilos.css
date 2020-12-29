@@ -26,7 +26,7 @@ header{
 }
 
 header nav {
-    width: 35%;
+    width: 45%;
     margin-right: 5rem;
 }
 
@@ -42,6 +42,20 @@ header a {
     display: inline;
     color: #F8F9FA;
     font-size: 1.5rem;
+}
+
+#nav__carrito--button {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#nav__carrito--button img {
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+    margin-right: 1rem;
 }
 
 header img {

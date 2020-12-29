@@ -86,8 +86,9 @@ while (agrega.toLowerCase() === "si") {
             alert(`Valor ingresado Incorrecto. Por favor, intentelo nuevamente`);
             break;
 }
-
 }
 console.log(carrito)
 
-alert(`El total de productos ingrsados es de ${carrito.length}`);
+const spanCarrito = document.querySelector("#carrito_lenght");
+spanCarrito.textContent = `${carrito.length}`;
+
