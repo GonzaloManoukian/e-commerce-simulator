@@ -28,7 +28,7 @@
                 </a>
                 <a id="nav__carrito--button" href="#">
                     <i> <img src="./assets/icons/shopping-cart.svg" alt=""></i>
-                    <li> Mi Carrito (<span id="carrito_lenght"> 0 </span>) </li>
+                    <li> Mi Carrito (<span id="carrito_lenght">  </span>) </li>
                 </a>
             </ul>
         </nav>
@@ -38,7 +38,7 @@
 
     <div class="desafios">
         <h2>Javascript Coder House</h2>
-        <h3> Desafio 9</h3>
+        <h3> Segunda Entrega Parcial </h3>
         <p>Gonzalo Manoukian</p>
     </div>
 
@@ -56,7 +56,10 @@
                         <h3 class="producto__titulo">Cartero</h3>
                         <p class="producto__autor">Charles Bukowski</p>
                         <h4 class="producto__precio">$700</h4>
-                        <button class="producto__botonComprar">Agregar al Carrito</button>
+                        <div>
+                        <input class="carrito__itemCantidad" type="number" min="1" value="1">
+                        <button class="producto__botonComprar" data-id="1">Agregar al Carrito</button>
+                        </div>
                     </div>
                 </div>
     
@@ -65,8 +68,11 @@
                     <div>
                         <h3 class="producto__titulo">Viajes por el scriptorum</h3>
                         <p class="producto__autor">Paul Auster</p>
-                        <h4 class="producto__precio">$700</h4>
-                        <button class="producto__botonComprar">Agregar al Carrito</button>
+                        <h4 class="producto__precio">$800</h4>
+                        <div>
+                            <input class="carrito__itemCantidad" type="number" min="1" value="1">
+                            <button class="producto__botonComprar" data-id="2">Agregar al Carrito</button>
+                        </div>
                     </div>
                 </div>
     
@@ -75,8 +81,11 @@
                     <div>
                         <h3 class="producto__titulo">Seda</h3>
                         <p class="producto__autor">Alessandro Baricco</p>
-                        <h4 class="producto__precio">$700</h4>
-                        <button class="producto__botonComprar">Agregar al Carrito</button>
+                        <h4 class="producto__precio">$500</h4>
+                        <div>
+                            <input class="carrito__itemCantidad" type="number" min="1" value="1">
+                            <button class="producto__botonComprar" data-id="3">Agregar al Carrito</button>
+                            </div>
                     </div>
                 </div>
 
@@ -85,31 +94,15 @@
                     <div>
                         <h3 class="producto__titulo">El Hombre Ilustrado</h3>
                         <p class="producto__autor">Ray Bradbury</p>
-                        <h4 class="producto__precio">$700</h4>
-                        <button class="producto__botonComprar">Agregar al Carrito</button>
-                    </div>
-                </div>
-    
-               <div class="producto__card">
-                    <img src="img/austerviajes.jpg" alt="Tapa">
-                    <div>
-                        <h3 class="producto__titulo">Viajes por el scriptorum</h3>
-                        <p class="producto__autor">Paul Auster</p>
-                        <h4 class="producto__precio">$700</h4>
-                        <button class="producto__botonComprar">Agregar al Carrito</button>
+                        <h4 class="producto__precio">$900</h4>
+                        <div>
+                            <input class="carrito__itemCantidad" type="number" min="1" value="1">
+                            <button class="producto__botonComprar" data-id="4">Agregar al Carrito</button>
+                            </div>
                     </div>
                 </div>
 
-                <div class="producto__card">
-                    <img src="img/austerviajes.jpg" alt="Tapa">
-                    <div>
-                        <h3 class="producto__titulo">Viajes por el scriptorum</h3>
-                        <p class="producto__autor">Paul Auster</p>
-                        <h4 class="producto__precio">$700</h4>
-                        <button class="producto__botonComprar">Agregar al Carrito</button>
-                    </div>
-                </a>
-        </section>
+            </section>
     </main>
 
     <section class="carrito__lista">
@@ -117,6 +110,7 @@
     
     <div class="carrito__listaContenedor">
 
+        <!-- Inyectado via js/funciones.js -->
 
     </div>
 

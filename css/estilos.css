@@ -168,6 +168,8 @@ h1 {
 
 .carrito__Cantidad {
     flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .carrito__itemCantidad {
@@ -177,6 +179,24 @@ h1 {
     text-align: center;
 }
 
+.carritoItemCantidadNumero{
+    margin: 0 1rem;
+}
+
+.carritoItemRestar {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: red;
+    text-decoration: none;
+}
+
+.carritoItemSumar {
+    font-size: 2rem;
+    font-weight: bolder;
+    color:green;
+    text-decoration: none;
+}
+
 .carrito__itemPrecio {
     justify-self: flex-end;
     flex-grow: 3;
@@ -184,6 +204,8 @@ h1 {
     text-align: right;
     margin-right: 2rem;
 }
+
+
 
 .carrito__total {
     display: flex;
