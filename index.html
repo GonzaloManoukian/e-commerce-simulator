@@ -1,133 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Coder House - Gonzalo Manoukian</title>
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
 
-<body>
-
-<!-- ===== HEADER ===== -->
+  <body>
+    <!-- ===== HEADER ===== -->
     <header>
-        <figure>
-            <a href="index.html"><img src="img/logo.png" alt="Top Five Discos y Libros"></a>
-        </figure>
-        <nav>
-            <ul>
-                <a href="#">
-                    <li> Inicio </li>
-                </a>
-                <a href="#catalogo">
-                    <li> Catálogo </li>
-                </a>
-                <a href="#">
-                    <li> Contacto </li>
-                </a>
-                <a id="nav__carrito--button" href="#">
-                    <i> <img src="./assets/icons/shopping-cart.svg" alt=""></i>
-                    <li> Mi Carrito (<span id="carrito_lenght"> 0 </span>) </li>
-                </a>
-            </ul>
-        </nav>
+      <figure>
+        <a href="index.html"
+          ><img src="img/logo.png" alt="Top Five Discos y Libros"
+        /></a>
+      </figure>
+      <nav>
+        <ul>
+          <a href="#">
+            <li>Inicio</li>
+          </a>
+          <a href="#catalogo">
+            <li>Catálogo</li>
+          </a>
+          <a href="#">
+            <li>Contacto</li>
+          </a>
+          <a id="nav__carrito--button" href="#">
+            <i> <img src="./assets/icons/shopping-cart.svg" alt="" /></i>
+            <li>Mi Carrito (<span id="carrito_lenght"> 0 </span>)</li>
+          </a>
+        </ul>
+      </nav>
     </header>
 
-<!-- ===== TITULO Y DESAFIOS (Provisorio) ===== -->
+    <!-- ===== TITULO Y DESAFIOS (Provisorio) ===== -->
 
     <div class="desafios">
-        <h2>Javascript Coder House</h2>
-        <h3> Segunda Entrega Parcial </h3>
-        <p>Gonzalo Manoukian</p>
+      <h2>Javascript Coder House</h2>
+      <h3>Segunda Entrega Parcial / Desafio 12</h3>
+      <p>Gonzalo Manoukian</p>
     </div>
 
-<!-- ===== CATALOGO ===== -->
+    <!-- ===== CATALOGO ===== -->
 
     <main>
-    
-        <h1 id="catalogo"> Catálogo </h1>
-    
-        <section class="producto__catalogoContenedor">
-    
-                <div class="producto__card">
-                    <img src="img/bukowskicartero.jpg" alt="">
-                    <div>
-                        <h3 class="producto__titulo">Cartero</h3>
-                        <p class="producto__autor">Charles Bukowski</p>
-                        <h4 class="producto__precio">$700</h4>
-                        <div>
-                        <input class="carrito__itemCantidad" type="number" min="1" value="1">
-                        <button class="producto__botonComprar" data-id="1">Agregar al Carrito</button>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="producto__card">
-                    <img src="img/austerviajes.jpg" alt="Tapa">
-                    <div>
-                        <h3 class="producto__titulo">Viajes por el scriptorum</h3>
-                        <p class="producto__autor">Paul Auster</p>
-                        <h4 class="producto__precio">$800</h4>
-                        <div>
-                            <input class="carrito__itemCantidad" type="number" min="1" value="1">
-                            <button class="producto__botonComprar" data-id="2">Agregar al Carrito</button>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="producto__card">
-                    <img src="img/abseda.jpg" alt="Tapa">
-                    <div>
-                        <h3 class="producto__titulo">Seda</h3>
-                        <p class="producto__autor">Alessandro Baricco</p>
-                        <h4 class="producto__precio">$500</h4>
-                        <div>
-                            <input class="carrito__itemCantidad" type="number" min="1" value="1">
-                            <button class="producto__botonComprar" data-id="3">Agregar al Carrito</button>
-                            </div>
-                    </div>
-                </div>
+      <h1 id="catalogo">Catálogo</h1>
 
-                <div class="producto__card">
-                    <img src="img/bradburyhombre.jpg" alt="Tapa">
-                    <div>
-                        <h3 class="producto__titulo">El Hombre Ilustrado</h3>
-                        <p class="producto__autor">Ray Bradbury</p>
-                        <h4 class="producto__precio">$900</h4>
-                        <div>
-                            <input class="carrito__itemCantidad" type="number" min="1" value="1">
-                            <button class="producto__botonComprar" data-id="4">Agregar al Carrito</button>
-                            </div>
-                    </div>
-                </div>
+      <section class="producto__catalogoContenedor">
+        <div class="producto__card">
+          <img src="img/bukowskicartero.jpg" alt="" />
+          <div>
+            <h3 class="producto__titulo">Cartero</h3>
+            <p class="producto__autor">Charles Bukowski</p>
+            <h4 class="producto__precio">$700</h4>
+            <div>
+              <input
+                class="producto__itemCantidad"
+                type="number"
+                min="1"
+                value="1"
+              />
+              <button class="producto__botonComprar" data-id="1">
+                Agregar al Carrito
+              </button>
+            </div>
+          </div>
+        </div>
 
-            </section>
+        <div class="producto__card">
+          <img src="img/austerviajes.jpg" alt="Tapa" />
+          <div>
+            <h3 class="producto__titulo">Viajes por el scriptorum</h3>
+            <p class="producto__autor">Paul Auster</p>
+            <h4 class="producto__precio">$800</h4>
+            <div>
+              <input
+                class="producto__itemCantidad"
+                type="number"
+                min="1"
+                value="1"
+              />
+              <button class="producto__botonComprar" data-id="2">
+                Agregar al Carrito
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto__card">
+          <img src="img/abseda.jpg" alt="Tapa" />
+          <div>
+            <h3 class="producto__titulo">Seda</h3>
+            <p class="producto__autor">Alessandro Baricco</p>
+            <h4 class="producto__precio">$500</h4>
+            <div>
+              <input
+                class="producto__itemCantidad"
+                type="number"
+                min="1"
+                value="1"
+              />
+              <button class="producto__botonComprar" data-id="3">
+                Agregar al Carrito
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="producto__card">
+          <img src="img/bradburyhombre.jpg" alt="Tapa" />
+          <div>
+            <h3 class="producto__titulo">El Hombre Ilustrado</h3>
+            <p class="producto__autor">Ray Bradbury</p>
+            <h4 class="producto__precio">$900</h4>
+            <div>
+              <input
+                class="producto__itemCantidad"
+                type="number"
+                min="1"
+                value="1"
+              />
+              <button class="producto__botonComprar" data-id="4">
+                Agregar al Carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <section class="carrito__lista">
-        <h2 class="carrito__titulo"> Carrito de Compras </h2>
-    
-    <div class="carrito__listaContenedor">
+      <h2 class="carrito__titulo">Carrito de Compras</h2>
 
+      <div class="carrito__listaContenedor">
         <!-- Inyectado via js/funciones.js -->
+      </div>
 
-    </div>
-
-        <div class="carrito__total"> 
-            <div class="carrito__totalTitulo">
-                <h3> Total </h3>
-            </div>
-
-            <div class="carrito__totalCalculo">
-                <h2 class="carrito__totalCalculo--h"> $0 </h2>
-            </div>
+      <div class="carrito__total">
+        <div class="carrito__totalTitulo">
+          <h3>Total</h3>
         </div>
 
+        <div class="carrito__totalCalculo">
+          <h2 class="carrito__totalCalculo--h">$0</h2>
+        </div>
+      </div>
     </section>
 
-
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.js"
+      integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+      crossorigin="anonymous"
+    ></script>
     <script src="js/funciones.js"></script>
-</body>
-
+  </body>
 </html>

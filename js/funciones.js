@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     actualizarCarritoTotal();
 });
 
+/* === JQUERY: SELECTORES - LISTENERS === */
+
+const restarCantidadItem = $('.carrito__listaContenedor').on('click', restarCantidad);
+const sumarCantidadItem = $('.carrito__listaContenedor').on('click', sumarCantidad);
+
 
 /* ===== FUNCIONES ===== */
 
@@ -41,17 +46,18 @@ function obtenerDatos(producto) {
     titulo: producto.querySelector(`.producto__titulo`).textContent,
     autor: producto.querySelector(`.producto__autor`).textContent,
     precio: producto.querySelector(`.producto__precio`).textContent,
-    cantidad: producto.querySelector(`.carrito__itemCantidad`).value,
+    cantidad: producto.querySelector(`.producto__itemCantidad`).value,
     id: producto.querySelector(`.producto__botonComprar`).getAttribute('data-id')
     }
 
     const existe = carrito.some(producto => producto.id == productoAgregado.id);
+    const cantidadInput = producto.querySelector(`.producto__itemCantidad`).value;
 
 	if (existe) {
 
 		const productos = carrito.map(producto => {
 			if (producto.id === productoAgregado.id) {
-				producto.cantidad++;
+				producto.cantidad = Number(producto.cantidad) + Number(cantidadInput);
 				return producto;
 			} else {
 				return producto;
@@ -87,7 +93,9 @@ function insertarCarritoHTML() {
         </div>
     
         <div class="carrito__Cantidad">
-            <p> ${cantidad} </p>
+            <a href="#" class="carritoItemRestar" data-id="${id}"> - </a>
+            <p class="carrito__itemCantidad"> ${cantidad} </p>
+            <a href="#" class="carritoItemSumar" data-id="${id}"> + </a>
         </div>
     
         <div class="carrito__itemPrecio">
@@ -172,3 +180,52 @@ function carritoCantidadTotal() {
     }
 }
 
+function restarCantidad(e) {
+	if (e.target.classList.contains('carritoItemRestar')) {
+        
+        e.preventDefault();
+
+		const cantidadId = e.target.getAttribute('data-id');
+        const productos = carrito.map(producto => {
+
+                if (producto.id === cantidadId) {
+                    producto.cantidad--;
+                    if (producto.cantidad <= 1) {
+                        producto.cantidad = 1;
+                    }
+                    return producto;
+                } else {
+                    return producto;
+                }
+            });
+            carrito = [...productos];
+                } 
+
+		insertarCarritoHTML();
+        guardarStorage();
+        actualizarCarritoTotal();
+}
+
+
+function sumarCantidad(e) {
+	if (e.target.classList.contains('carritoItemSumar')) {
+        
+        e.preventDefault();
+
+		const cantidadId = e.target.getAttribute('data-id');
+        const productos = carrito.map(producto => {
+
+                if (producto.id === cantidadId) {
+                    producto.cantidad++;
+                    return producto;
+                } else {
+                    return producto;
+                }
+            });
+            carrito = [...productos];
+        } 
+
+		insertarCarritoHTML();
+        guardarStorage();
+        actualizarCarritoTotal();
+}
