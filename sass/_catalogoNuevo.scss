@@ -1,0 +1,96 @@
+.main {
+  width: 80vw;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.aside {
+  flex-basis: 20%;
+
+  &__filters {
+    list-style: none;
+    margin: 200px 0;
+    text-align: left;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &--atributos {
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.producto {
+  &__catalogoContenedor {
+    flex-basis: 80%;
+    margin: 200px 0;
+  }
+
+  &__card {
+    margin: 0 0 70px 80px;
+  }
+
+  &__detalles {
+    margin: 0 0 0 50px;
+    text-align: left;
+  }
+
+  &__imagen {
+    width: 150px;
+    box-shadow: 0 0 10px gray;
+  }
+
+  &__titulo {
+    font-size: $font-xl;
+    margin-bottom: 15px;
+  }
+  &__autor {
+    font-size: $font-sm;
+    margin-bottom: 30px;
+  }
+
+  &__precio {
+    font-size: $font-md;
+    margin-bottom: 80px;
+  }
+
+  &__estrella {
+    font-size: $font-xl;
+    line-height: 0;
+    color: lightgray;
+    margin: 0 0 80px 15px;
+
+    &-active {
+      color: gold;
+    }
+  }
+
+  &__itemCantidad {
+    display: block;
+    font-size: $font-md;
+    padding: 30px;
+    background-color: white;
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+
+  &__botonComprar {
+    font-size: $font-md;
+    padding: 10px 30px;
+    background-color: white;
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+      box-shadow: 0 0 5px lightgray;
+    }
+  }
+}

@@ -1,0 +1,162 @@
+.carrito {
+  &__lista {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 998;
+    top: 0;
+    right: -30vw;
+    width: 30vw;
+    height: 100vh;
+    transition: right 0.5s;
+
+    &Active {
+      right: 0;
+    }
+
+    &_lateral {
+      float: left;
+      width: 10px;
+      height: 100%;
+      background-color: black;
+    }
+  }
+
+  &__header {
+    margin: 50px 20px 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid black;
+  }
+
+  &__titulo {
+  }
+
+  &__cerrar {
+    padding: 5px 10px;
+    border: 1px solid gray;
+    border-radius: 40%;
+    color: gray;
+    cursor: pointer;
+
+    &:hover {
+      border-color: black;
+      color: black;
+      box-shadow: 0 0 6px lightgray;
+    }
+  }
+
+  &__listaContenedor {
+  }
+
+  &__total {
+    margin: 10px 20px 20px;
+    padding-top: 15px;
+    border-top: 1px solid black;
+  }
+
+  &__totalTitulo {
+  }
+
+  &__totalCalculo {
+    &--h {
+    }
+  }
+
+  &__bottom {
+    flex-flow: column wrap;
+    &Vaciar {
+      margin-bottom: 10px;
+    }
+    &Checkout {
+      margin-bottom: 50px;
+
+      &Finished {
+        position: fixed;
+        width: 30vw;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        color: white;
+        border: none;
+      }
+    }
+  }
+
+  &__item {
+    margin: 20px 20px;
+
+    &ImagenDiv {
+      min-width: 55px;
+      width: 15%;
+    }
+    &Imagen {
+      width: 50px;
+      box-shadow: 0 0 5px gray;
+    }
+
+    &Descripcion {
+      width: 35%;
+      text-align: left;
+      margin-left: 15px;
+    }
+
+    &Titulo {
+      font-size: $font-sm;
+      font-weight: 400;
+    }
+
+    &Autor {
+      font-size: $font-xs;
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+
+    &Precio {
+      width: 25%;
+      margin: auto 0;
+      text-align: right;
+    }
+  }
+
+  &__productoEliminar {
+    font-size: $font-sm;
+    color: blue;
+    text-decoration: none;
+  }
+
+  &__Cantidad {
+    width: 25%;
+  }
+
+  &__itemCantidad {
+    font-size: $font-sm;
+    line-height: 0;
+    width: 40%;
+    max-width: 35px;
+    height: 25px;
+    border: 1px solid lightgray;
+  }
+
+  &ItemRestar {
+    height: 25px;
+    width: 30%;
+    max-width: 25px;
+    font-size: $font-md;
+    font-weight: 500;
+    line-height: 0;
+    color: red;
+    text-decoration: none;
+    border: 1px solid lightgray;
+  }
+
+  &ItemSumar {
+    height: 25px;
+    width: 30%;
+    max-width: 25px;
+    font-size: $font-md;
+    font-weight: 500;
+    line-height: 0;
+    color: green;
+    text-decoration: none;
+    border: 1px solid lightgray;
+  }
+}

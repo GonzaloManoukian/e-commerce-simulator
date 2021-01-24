@@ -1,0 +1,83 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: $font-md;
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: $font-xl;
+}
+
+// Flexbox
+
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+// Botones
+
+.boton {
+  font-size: $font-md;
+  padding: 7px 20px;
+  background-color: white;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+    box-shadow: 0 0 5px lightgray;
+  }
+}
+
+.botonCTA {
+  font-size: $font-md;
+  padding: 15px 25px;
+  background-color: green;
+  color: lightgray;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+    box-shadow: 0 0 5px lightgray;
+  }
+}

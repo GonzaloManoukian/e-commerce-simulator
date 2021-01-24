@@ -1,0 +1,30 @@
+[
+    {
+        "imagen": "img/bukowskicartero.jpg",
+        "titulo": "Cartero",
+        "autor": "Charles Bukowski",
+        "precio": "700",
+        "id": "1"
+    },
+    {
+        "imagen": "img/austerviajes.jpg",
+        "titulo": "Viajes por el scriptorum",
+        "autor": "Paul Auster",
+        "precio": "800",
+        "id": "2"
+    },
+    {
+        "imagen": "img/abseda.jpg",
+        "titulo": "Seda",
+        "autor": "Alessandro Baricco",
+        "precio": "500",
+        "id": "3"
+    },
+    {
+        "imagen": "img/bradburyhombre.jpg",
+        "titulo": "El Hombre Ilustrado",
+        "autor": "Ray Bradbury",
+        "precio": "900",
+        "id": "4"
+    }
+]
