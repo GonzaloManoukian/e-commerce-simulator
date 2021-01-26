@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cargarListaProductos(stockProductos);
     },
     complete: function () {
-      $.getScript("/js/funciones.js", function () {
+      $.getScript("js/funciones.js", function () {
         // console.log("Cargado despues de Ajax");
       });
     },
