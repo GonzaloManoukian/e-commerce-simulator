@@ -2,6 +2,7 @@
 
 let stockProductos;
 
+/* Carga de Productos a traves de AJAX */
 document.addEventListener("DOMContentLoaded", () => {
   $.ajax({
     type: "GET",
@@ -10,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
       stockProductos = data;
       cargarListaProductos(stockProductos);
     },
+    error: function () {
+      console.log("Error");
+    },
     // complete: function () {
     //   $.getScript("./js/funciones.js", function () {
     //     // console.log("Cargado despues de Ajax");
@@ -17,6 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // },
   });
 });
+
+/* Carga de Productos a traves de Fetch */
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   fetch("/js/productos.json")
+//     .then((ans) => ans.json())
+//     .then((productos) => {
+//       stockProductos = productos;
+//       cargarListaProductos(productos);
+//       console.log("Desde Fetch");
+//     });
+// });
 
 function cargarListaProductos(productos) {
   //   $(".producto__card").hide();
@@ -49,6 +65,4 @@ function cargarListaProductos(productos) {
 	  </div>
 		`;
   });
-
-  console.log("Agrega Productos");
 }

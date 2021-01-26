@@ -1,7 +1,6 @@
-// console.log("carga funciones.js");
-
 /* ===== SELECTORES ===== */
 const agregarProductoCarrito = document.querySelectorAll(`.producto__botonComprar`);
+const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
 const carritoContenedor = document.querySelector(`.carrito__listaContenedor`);
 const listaCarritoHTML = document.querySelector(`.carrito__listaContenedor`);
 const botonCarrito = document.querySelector(`#nav__carrito--button`);
@@ -9,13 +8,13 @@ const botonCerrarCarrito = document.querySelector(`.carrito__cerrar`);
 const carritoSideBar = document.querySelector(`.carrito__lista`);
 const botonVaciarCarrito = document.querySelector(`.carrito__bottomVaciar`);
 const botonCheckout = document.querySelector(`.carrito__bottomCheckout`);
+
 let carrito = [];
 
 /* ===== LISTENERS ===== */
 
-agregarProductoCarrito.forEach((boton) => {
-  boton.addEventListener(`click`, agregarProducto);
-  console.log(boton);
+agregarProductoCarrito.forEach((addToCartButton) => {
+  addToCartButton.addEventListener(`click`, agregarProducto);
 });
 
 listaCarritoHTML.addEventListener("click", quitarProducto);
@@ -52,7 +51,8 @@ function agregarProducto(e) {
   const button = e.target;
   const producto = button.closest(`.producto__card`);
 
-  console.log(button);
+  console.log("Boton Funciona");
+
   obtenerDatos(producto);
 }
 
@@ -112,7 +112,7 @@ function insertarCarritoHTML() {
         <a href="#" class="carritoItemSumar flex flex-jc-c flex-ai-c" data-id="${id}"> + </a>
     </div>
           <div class="carrito__itemPrecio">
-        <h3> $${precio} </h3>
+        <h3> ${precio} </h3>
     </div>
   </div>`;
 
