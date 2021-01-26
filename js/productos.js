@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
       stockProductos = data;
       cargarListaProductos(stockProductos);
     },
-    complete: function () {
-      $.getScript("./js/funciones.js", function () {
-        // console.log("Cargado despues de Ajax");
-      });
-    },
+    // complete: function () {
+    //   $.getScript("./js/funciones.js", function () {
+    //     // console.log("Cargado despues de Ajax");
+    //   });
+    // },
   });
 });
 
