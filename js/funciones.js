@@ -1,5 +1,4 @@
 /* ===== SELECTORES ===== */
-const agregarProductoCarrito = document.querySelectorAll(`.producto__botonComprar`);
 const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
 const carritoContenedor = document.querySelector(`.carrito__listaContenedor`);
 const listaCarritoHTML = document.querySelector(`.carrito__listaContenedor`);
@@ -11,11 +10,15 @@ const botonCheckout = document.querySelector(`.carrito__bottomCheckout`);
 
 let carrito = [];
 
-/* ===== LISTENERS ===== */
+const darFuncionalidadBotonesCompra = () => {
+  const agregarProductoCarrito = document.querySelectorAll(`.producto__botonComprar`);
 
-agregarProductoCarrito.forEach((addToCartButton) => {
-  addToCartButton.addEventListener(`click`, agregarProducto);
-});
+  agregarProductoCarrito.forEach((addToCartButton) => {
+    addToCartButton.addEventListener(`click`, agregarProducto);
+  });
+}
+
+/* ===== LISTENERS ===== */
 
 listaCarritoHTML.addEventListener("click", quitarProducto);
 

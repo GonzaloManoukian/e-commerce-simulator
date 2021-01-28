@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     success: function (data) {
       stockProductos = data;
       cargarListaProductos(stockProductos);
+      darFuncionalidadBotonesCompra();
     },
     error: function () {
       console.log("Error");
