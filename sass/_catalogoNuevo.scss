@@ -6,10 +6,11 @@
 
 .aside {
   flex-basis: 20%;
+  margin-top: 150px;
 
   &__filters {
     list-style: none;
-    margin: 200px 0;
+    margin: 80px 0;
     text-align: left;
 
     a {
@@ -22,12 +23,51 @@
       margin-bottom: 25px;
     }
   }
+
+  &__search {
+    margin: 0 5px;
+
+    &Bar {
+      display: table-cell;
+      height: 40px;
+      border: 1px solid black;
+      border-right: none;
+      padding-left: 10px;
+      border-top-left-radius: 10px 10px;
+      border-bottom-left-radius: 10px 10px;
+      outline: none;
+      opacity: 0.7;
+    }
+
+    &Button {
+      display: table-cell;
+      cursor: pointer;
+      height: 40px;
+      width: 40px;
+      background-color: transparent;
+      border: 1px solid black;
+      border-left: none;
+      border-top-right-radius: 10px 10px;
+      border-bottom-right-radius: 10px 10px;
+      background-image: url("../assets/icons/lupa.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20px auto;
+      outline: none;
+      opacity: 0.7;
+    }
+  }
+}
+
+.filtersActive {
+  font-weight: 500;
+  color: #ee434c;
 }
 
 .producto {
+  flex-basis: 80%;
+  margin: 150px 0; // 150 0
   &__catalogoContenedor {
-    flex-basis: 80%;
-    margin: 200px 0;
   }
 
   &__card {
@@ -91,6 +131,32 @@
     &:hover {
       color: black;
       box-shadow: 0 0 5px lightgray;
+    }
+  }
+}
+
+.categorias {
+  margin-bottom: 80px;
+  flex-basis: 100%;
+  margin-left: 80px;
+  > label {
+    font-size: $font-sm;
+  }
+  > select {
+    font-family: inherit;
+    font-size: $font-sm;
+    font-weight: inherit;
+    height: 40px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+    outline: none;
+
+    > option {
+      padding: 5px;
+      background-color: inherit;
     }
   }
 }

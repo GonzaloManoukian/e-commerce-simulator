@@ -1,48 +1,25 @@
-// console.log("carga productos.js");
+let stockProductos = [];
 
-let stockProductos;
+//////////////////////////////////////////////////////////////////////////////////
+// CARGA DE PRODUCTOS INICIAL
+//////////////////////////////////////////////////////////////////////////////////
 
-/* Carga de Productos a traves de AJAX */
 document.addEventListener("DOMContentLoaded", () => {
-  $.ajax({
-    type: "GET",
-    url: "js/productos.json",
-    success: function (data) {
-      stockProductos = data;
+  fetch("/js/productos.json")
+    .then((ans) => ans.json())
+    .then((productos) => {
+      stockProductos = productos;
+      stockProductos = stockProductos.sort((a, b) => (a.titulo > b.titulo ? 1 : -1));
       cargarListaProductos(stockProductos);
       darFuncionalidadBotonesCompra();
-    },
-    error: function () {
-      console.log("Error");
-    },
-    // complete: function () {
-    //   $.getScript("./js/funciones.js", function () {
-    //     // console.log("Cargado despues de Ajax");
-    //   });
-    // },
-  });
+    });
 });
 
-/* Carga de Productos a traves de Fetch */
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   fetch("/js/productos.json")
-//     .then((ans) => ans.json())
-//     .then((productos) => {
-//       stockProductos = productos;
-//       cargarListaProductos(productos);
-//       console.log("Desde Fetch");
-//     });
-// });
-
 function cargarListaProductos(productos) {
-  //   $(".producto__card").hide();
-
   productos.forEach((producto) => {
     const { imagen, titulo, autor, precio, id } = producto;
 
     const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
-
     catalogoContenedor.innerHTML += `
 		<div class="producto__card flex flex-ai-c">
 		<img src="${imagen}" alt="" class="producto__imagen" />
@@ -66,4 +43,129 @@ function cargarListaProductos(productos) {
 	  </div>
 		`;
   });
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// ORDENAR PRODUCTOS POR
+//////////////////////////////////////////////////////////////////////////////////
+
+const sortBy = document.querySelector("#sortBy");
+
+sortBy.addEventListener("change", sortByOption);
+
+function sortByOption(e) {
+  const option = e.target.value;
+
+  if (option == "AZ") {
+    ordenarAZ();
+  } else if (option == "ZA") {
+    ordenarZA();
+  } else if (option == "precioUp") {
+    ordenarPrecioUp();
+  } else if (option == "precioDown") {
+    ordenarPrecioDown();
+  }
+}
+
+function ordenarAZ() {
+  const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
+  stockProductos = stockProductos.sort((a, b) => (a.titulo > b.titulo ? 1 : -1));
+
+  limpiarProductos();
+  cargarListaProductos(stockProductos);
+  darFuncionalidadBotonesCompra();
+}
+
+function ordenarZA() {
+  const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
+  stockProductos = stockProductos.sort((a, b) => (b.titulo > a.titulo ? 1 : -1));
+
+  limpiarProductos();
+  cargarListaProductos(stockProductos);
+  darFuncionalidadBotonesCompra();
+}
+
+function ordenarPrecioUp() {
+  const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
+  stockProductos = stockProductos.sort((a, b) => a.precio - b.precio);
+
+  limpiarProductos();
+  cargarListaProductos(stockProductos);
+  darFuncionalidadBotonesCompra();
+}
+
+function ordenarPrecioDown() {
+  const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
+  stockProductos = stockProductos.sort((a, b) => b.precio - a.precio);
+
+  limpiarProductos();
+  cargarListaProductos(stockProductos);
+  darFuncionalidadBotonesCompra();
+}
+
+function limpiarProductos() {
+  while (catalogoContenedor.firstChild) {
+    catalogoContenedor.removeChild(catalogoContenedor.firstChild);
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// BARRA DE BUSQUEDA
+//////////////////////////////////////////////////////////////////////////////////
+
+const busquedaInput = document.querySelector("#search");
+busquedaInput.addEventListener("submit", busquedaProductos);
+
+function busquedaProductos(e) {
+  e.preventDefault();
+
+  const busqueda = document.querySelector("#searchBar").value;
+
+  const resultadoBusqueda = stockProductos.filter(
+    (producto) =>
+      producto.titulo.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
+      producto.autor.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase())
+  );
+
+  limpiarProductos();
+  cargarListaProductos(resultadoBusqueda);
+  darFuncionalidadBotonesCompra();
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+// FILTROS
+//////////////////////////////////////////////////////////////////////////////////
+
+const atributoFiltro = document.querySelectorAll(".aside__filters--atributos");
+
+atributoFiltro.forEach((atributo) => {
+  atributo.addEventListener("click", filtrarProductos);
+});
+
+function filtrarProductos(e) {
+  e.preventDefault();
+
+  const atributo = e.target.textContent.toLocaleLowerCase();
+
+  const resultado = stockProductos.filter((producto) => producto.categoria.toLocaleLowerCase() == atributo);
+
+  if (atributo == "todos los libros") {
+    limpiarProductos();
+    cargarListaProductos(stockProductos);
+    darFuncionalidadBotonesCompra();
+  } else if (resultado != 0) {
+    limpiarProductos();
+    cargarListaProductos(resultado);
+    darFuncionalidadBotonesCompra();
+  } else {
+    catalogoContenedor.innerHTML = `
+		  <p> No se encontraron productos relacionados a su busqueda </p>
+		  `;
+  }
+
+  atributoFiltro.forEach((atributo) => {
+    atributo.classList.remove("filtersActive");
+  });
+
+  e.target.classList.add("filtersActive");
 }

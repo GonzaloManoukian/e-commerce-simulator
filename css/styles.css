@@ -166,11 +166,12 @@ header img {
 .aside {
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
+  margin-top: 150px;
 }
 
 .aside__filters {
   list-style: none;
-  margin: 200px 0;
+  margin: 80px 0;
   text-align: left;
 }
 
@@ -184,10 +185,49 @@ header img {
   margin-bottom: 25px;
 }
 
-.producto__catalogoContenedor {
+.aside__search {
+  margin: 0 5px;
+}
+
+.aside__searchBar {
+  display: table-cell;
+  height: 40px;
+  border: 1px solid black;
+  border-right: none;
+  padding-left: 10px;
+  border-top-left-radius: 10px 10px;
+  border-bottom-left-radius: 10px 10px;
+  outline: none;
+  opacity: 0.7;
+}
+
+.aside__searchButton {
+  display: table-cell;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-left: none;
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  background-image: url("../assets/icons/lupa.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px auto;
+  outline: none;
+  opacity: 0.7;
+}
+
+.filtersActive {
+  font-weight: 500;
+  color: #ee434c;
+}
+
+.producto {
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
-  margin: 200px 0;
+  margin: 150px 0;
 }
 
 .producto__card {
@@ -257,6 +297,35 @@ header img {
           box-shadow: 0 0 5px lightgray;
 }
 
+.categorias {
+  margin-bottom: 80px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  margin-left: 80px;
+}
+
+.categorias > label {
+  font-size: 0.875rem;
+}
+
+.categorias > select {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: inherit;
+  height: 40px;
+  padding: 5px;
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.categorias > select > option {
+  padding: 5px;
+  background-color: inherit;
+}
+
 .carrito__lista {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.9);
@@ -267,6 +336,7 @@ header img {
   height: 100vh;
   -webkit-transition: right 0.5s;
   transition: right 0.5s;
+  overflow: scroll;
 }
 
 .carrito__listaActive {

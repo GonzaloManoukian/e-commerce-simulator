@@ -35,11 +35,24 @@
     <!-- ===== CATALOGO ===== -->
 
     <main class="main flex flex-jc-c">
+
+<!-- ASIDE -->
+
       <aside class="aside">
+
+        <div class="aside__search">
+          <form action="#" id="search">
+            <div class="flex flex-jc-c flex-ai-c">
+          <input type="search" name="search" id="searchBar" class="aside__searchBar" placeholder="Titulo, Autor">
+          <input type="submit" id="searchButton" class="aside__searchButton" value="">
+        </div>
+        </form>
+        </div>
+
         <ul class="aside__filters">
-          <a href="#"><li class="aside__filters--atributos">Todos los libros</li></a>
+          <a href="#"><li class="aside__filters--atributos filtersActive">Todos los libros</li></a>
           <a href="#"><li class="aside__filters--atributos">Arte y Música</li></a>
-          <a href="#"><li class="aside__filters--atributos">Bibliografias</li></a>
+          <a href="#"><li class="aside__filters--atributos">Biografías</li></a>
           <a href="#"><li class="aside__filters--atributos">Desarrollo Personal</li></a>
           <a href="#"><li class="aside__filters--atributos">Infantiles</li></a>
           <a href="#"><li class="aside__filters--atributos">Novelas</li></a>
@@ -47,10 +60,23 @@
         </ul>
       </aside>
 
-      <section class="producto__catalogoContenedor">
+      <section class="producto">
 
-        <!-- Inyectado via js/productos.js -->
+        <div class="categorias flex flex-ai-c">
+          <label for="sortBy">Ordenar por: </label>
+          <select name="Sort By" id="sortBy">
+            <option value="AZ"> Alfabeticamente A-Z </option>
+            <option value="ZA"> Alfabeticamente Z-A </option>
+            <option value="precioUp"> Precio Menor a Mayor </option>
+            <option value="precioDown"> Precio Mayor a Menor </option>
+          </select>
+        </div>
 
+        <div class="producto__catalogoContenedor">
+
+          <!-- Inyectado via js/productos.js -->
+
+        </div>
       </section>
     </main>
 
@@ -86,7 +112,6 @@
     src="https://code.jquery.com/jquery-3.5.1.js"
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
-    
     <script src="js/productos.js"></script>
     <script src="js/funciones.js"></script>
   </body>

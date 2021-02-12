@@ -1,4 +1,5 @@
 /* ===== SELECTORES ===== */
+
 const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
 const carritoContenedor = document.querySelector(`.carrito__listaContenedor`);
 const listaCarritoHTML = document.querySelector(`.carrito__listaContenedor`);
@@ -9,14 +10,6 @@ const botonVaciarCarrito = document.querySelector(`.carrito__bottomVaciar`);
 const botonCheckout = document.querySelector(`.carrito__bottomCheckout`);
 
 let carrito = [];
-
-const darFuncionalidadBotonesCompra = () => {
-  const agregarProductoCarrito = document.querySelectorAll(`.producto__botonComprar`);
-
-  agregarProductoCarrito.forEach((addToCartButton) => {
-    addToCartButton.addEventListener(`click`, agregarProducto);
-  });
-}
 
 /* ===== LISTENERS ===== */
 
@@ -50,11 +43,17 @@ const sumarCantidadItem = $(".carrito__listaContenedor").on("click", sumarCantid
 
 /* ===== FUNCIONES ===== */
 
+const darFuncionalidadBotonesCompra = () => {
+  const agregarProductoCarrito = document.querySelectorAll(`.producto__botonComprar`);
+
+  agregarProductoCarrito.forEach((addToCartButton) => {
+    addToCartButton.addEventListener(`click`, agregarProducto);
+  });
+};
+
 function agregarProducto(e) {
   const button = e.target;
   const producto = button.closest(`.producto__card`);
-
-  console.log("Boton Funciona");
 
   obtenerDatos(producto);
 }

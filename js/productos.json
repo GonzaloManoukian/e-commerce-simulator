@@ -1,30 +1,82 @@
 [
     {
-        "imagen": "img/bukowskicartero.jpg",
+        "imagen": "../img/bukowskicartero.jpg",
         "titulo": "Cartero",
         "autor": "Charles Bukowski",
-        "precio": "700",
+        "precio": "1000",
+        "categoria": "Novelas",
         "id": "1"
     },
     {
-        "imagen": "img/austerviajes.jpg",
+        "imagen": "../img/austerviajes.jpg",
         "titulo": "Viajes por el scriptorum",
         "autor": "Paul Auster",
-        "precio": "800",
+        "precio": "1400",
+        "categoria": "Novelas",
         "id": "2"
     },
     {
-        "imagen": "img/abseda.jpg",
+        "imagen": "../img/abseda.jpg",
         "titulo": "Seda",
         "autor": "Alessandro Baricco",
-        "precio": "500",
+        "precio": "900",
+        "categoria": "Novelas",
         "id": "3"
     },
     {
-        "imagen": "img/bradburyhombre.jpg",
+        "imagen": "../img/cuentosninas.jpg",
+        "titulo": "Cuentos de Buenas Noches Para Niñas Rebeldes 3",
+        "autor": "Elena Favilli",
+        "precio": "1400",
+        "categoria": "Infantiles",
+        "id": "4"
+    },
+    {
+        "imagen": "../img/bradburyhombre.jpg",
         "titulo": "El Hombre Ilustrado",
         "autor": "Ray Bradbury",
-        "precio": "900",
-        "id": "4"
+        "precio": "500",
+        "categoria": "Novelas",
+        "id": "5"
+    },
+    {
+        "imagen": "../img/borges-biografia.jpg",
+        "titulo": "Borges, Una Biografía",
+        "autor": "Horacio Salas",
+        "precio": "700",
+        "categoria": "Biografías",
+        "id": "6"
+    },
+    {
+        "imagen": "../img/cortazar-biografia.jpg",
+        "titulo": "Julio Cortazar: La Biografía",
+        "autor": "Mario Goloboff",
+        "precio": "600",
+        "categoria": "Biografías",
+        "id": "7"
+    },
+    {
+        "imagen": "../img/bringingmetal.jpg",
+        "titulo": "Bringing Metal to the Children",
+        "autor": "Zack Wylde",
+        "precio": "4000",
+        "categoria": "Arte y Música",
+        "id": "8"
+    },
+    {
+        "imagen": "../img/narda.jpg",
+        "titulo": "201 tips para no comer como el or**",
+        "autor": "Narda Lepes",
+        "precio": "1300",
+        "categoria": "Desarrollo Personal",
+        "id": "9"
+    },
+    {
+        "imagen": "../img/chicasenny.jpg",
+        "titulo": "Chicas en NY - Los secretos mejor guardados de la Gran Manzana",
+        "autor": "Andy Clar",
+        "precio": "800",
+        "categoria": "Viajes",
+        "id": "10"
     }
 ]
