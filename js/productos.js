@@ -5,7 +5,7 @@ let stockProductos = [];
 //////////////////////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/js/productos.json")
+  fetch("./js/productos.json")
     .then((ans) => ans.json())
     .then((productos) => {
       stockProductos = productos;
