@@ -127,6 +127,11 @@
     border: 1px solid grey;
     border-radius: 5px;
     cursor: pointer;
+    outline: none;
+
+    &:active {
+      background-color: lighten(#00a650, 10);
+    }
 
     &:hover {
       color: black;

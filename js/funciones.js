@@ -1,4 +1,6 @@
-/* ===== SELECTORES ===== */
+//////////////////////////////////////////////////////////////////////////////////
+// SELECTORES
+//////////////////////////////////////////////////////////////////////////////////
 
 const catalogoContenedor = document.querySelector(".producto__catalogoContenedor");
 const carritoContenedor = document.querySelector(`.carrito__listaContenedor`);
@@ -11,7 +13,9 @@ const botonCheckout = document.querySelector(`.carrito__bottomCheckout`);
 
 let carrito = [];
 
-/* ===== LISTENERS ===== */
+//////////////////////////////////////////////////////////////////////////////////
+// LISTENERS
+//////////////////////////////////////////////////////////////////////////////////
 
 listaCarritoHTML.addEventListener("click", quitarProducto);
 
@@ -36,20 +40,24 @@ botonVaciarCarrito.addEventListener("click", vaciarCarrito);
 
 botonCheckout.addEventListener("click", finalizarCompra);
 
-/* === JQUERY: SELECTORES - LISTENERS === */
+//////////////////////////////////////////////////////////////////////////////////
+// JQUERY: SELECTORES - LISTENERS
+//////////////////////////////////////////////////////////////////////////////////
 
 const restarCantidadItem = $(".carrito__listaContenedor").on("click", restarCantidad);
 const sumarCantidadItem = $(".carrito__listaContenedor").on("click", sumarCantidad);
 
-/* ===== FUNCIONES ===== */
+//////////////////////////////////////////////////////////////////////////////////
+// FUNCIONES
+//////////////////////////////////////////////////////////////////////////////////
 
-const darFuncionalidadBotonesCompra = () => {
+function darFuncionalidadBotonesCompra() {
   const agregarProductoCarrito = document.querySelectorAll(`.producto__botonComprar`);
 
   agregarProductoCarrito.forEach((addToCartButton) => {
     addToCartButton.addEventListener(`click`, agregarProducto);
   });
-};
+}
 
 function agregarProducto(e) {
   const button = e.target;
@@ -169,25 +177,6 @@ function actualizarCarritoTotal() {
   }
 }
 
-function carritoCantidadTotal() {
-  const spanCarrito = document.querySelector("#carrito_lenght");
-
-  let cantidadTotal = 0;
-
-  spanCarrito.textContent = `${cantidadTotal}`;
-
-  if (carrito != []) {
-    carrito.forEach((producto) => {
-      const { titulo, autor, precio, cantidad, id } = producto;
-      cantidadTotal = cantidadTotal + Number(cantidad);
-
-      spanCarrito.textContent = `${cantidadTotal}`;
-    });
-  } else {
-    cantidadTotal = 0;
-  }
-}
-
 function restarCantidad(e) {
   if (e.target.classList.contains("carritoItemRestar")) {
     e.preventDefault();
@@ -251,4 +240,27 @@ function finalizarCompra(e) {
   setTimeout('botonCheckout.innerHTML = "Finalizar Compra"', 1000);
 
   carritoSideBar.classList.remove("carrito__listaActive");
+}
+
+function carritoCantidadTotal() {
+  const spanCarrito = document.querySelector("#carrito_lenght");
+
+  let cantidadTotal = 0;
+
+  spanCarrito.textContent = `${cantidadTotal}`;
+  botonCarrito.classList.remove("nav__carrito--buttonActive");
+
+  if (carrito != []) {
+    carrito.forEach((producto) => {
+      const { titulo, autor, precio, cantidad, id } = producto;
+      cantidadTotal = cantidadTotal + Number(cantidad);
+
+      spanCarrito.textContent = `${cantidadTotal}`;
+
+      botonCarrito.classList.add("nav__carrito--buttonActive");
+    });
+  } else {
+    cantidadTotal = 0;
+    botonCarrito.classList.remove("nav__carrito--buttonActive");
+  }
 }
