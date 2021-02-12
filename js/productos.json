@@ -1,6 +1,6 @@
 [
     {
-        "imagen": "../img/bukowskicartero.jpg",
+        "imagen": "img/bukowskicartero.jpg",
         "titulo": "Cartero",
         "autor": "Charles Bukowski",
         "precio": "1000",
@@ -8,7 +8,7 @@
         "id": "1"
     },
     {
-        "imagen": "../img/austerviajes.jpg",
+        "imagen": "img/austerviajes.jpg",
         "titulo": "Viajes por el scriptorum",
         "autor": "Paul Auster",
         "precio": "1400",
@@ -16,7 +16,7 @@
         "id": "2"
     },
     {
-        "imagen": "../img/abseda.jpg",
+        "imagen": "img/abseda.jpg",
         "titulo": "Seda",
         "autor": "Alessandro Baricco",
         "precio": "900",
@@ -24,7 +24,7 @@
         "id": "3"
     },
     {
-        "imagen": "../img/cuentosninas.jpg",
+        "imagen": "img/cuentosninas.jpg",
         "titulo": "Cuentos de Buenas Noches Para Niñas Rebeldes 3",
         "autor": "Elena Favilli",
         "precio": "1400",
@@ -32,7 +32,7 @@
         "id": "4"
     },
     {
-        "imagen": "../img/bradburyhombre.jpg",
+        "imagen": "img/bradburyhombre.jpg",
         "titulo": "El Hombre Ilustrado",
         "autor": "Ray Bradbury",
         "precio": "500",
@@ -40,7 +40,7 @@
         "id": "5"
     },
     {
-        "imagen": "../img/borges-biografia.jpg",
+        "imagen": "img/borges-biografia.jpg",
         "titulo": "Borges, Una Biografía",
         "autor": "Horacio Salas",
         "precio": "700",
@@ -48,7 +48,7 @@
         "id": "6"
     },
     {
-        "imagen": "../img/cortazar-biografia.jpg",
+        "imagen": "img/cortazar-biografia.jpg",
         "titulo": "Julio Cortazar: La Biografía",
         "autor": "Mario Goloboff",
         "precio": "600",
@@ -56,7 +56,7 @@
         "id": "7"
     },
     {
-        "imagen": "../img/bringingmetal.jpg",
+        "imagen": "img/bringingmetal.jpg",
         "titulo": "Bringing Metal to the Children",
         "autor": "Zack Wylde",
         "precio": "4000",
@@ -64,7 +64,7 @@
         "id": "8"
     },
     {
-        "imagen": "../img/narda.jpg",
+        "imagen": "img/narda.jpg",
         "titulo": "201 tips para no comer como el or**",
         "autor": "Narda Lepes",
         "precio": "1300",
@@ -72,7 +72,7 @@
         "id": "9"
     },
     {
-        "imagen": "../img/chicasenny.jpg",
+        "imagen": "img/chicasenny.jpg",
         "titulo": "Chicas en NY - Los secretos mejor guardados de la Gran Manzana",
         "autor": "Andy Clar",
         "precio": "800",
